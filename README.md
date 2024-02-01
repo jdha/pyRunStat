@@ -1,47 +1,83 @@
 # pyRunStat
 
+.. image:: https://img.shields.io/github/workflow/status/jdha/pyRunStat/CI?logo=github
+    :target: https://github.com/jdha/pyRunStat/actions
+    :alt: GitHub Workflow CI Status
+
+.. image:: https://codecov.io/gh/jdha/pyRunStat/branch/main/graph/badge.svg?token=
+    :target: https://codecov.io/gh/jdha/pyRunStat
+    :alt: Code Coverage
+
+.. image:: https://readthedocs.org/projects/pyrunstat/badge/?version=latest
+    :target: https://pyrunstat.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://results.pre-commit.ci/badge/github/jdha/pyRunStat/main.svg
+   :target: https://results.pre-commit.ci/latest/github/jdha/pyRunStat/main
+   :alt: pre-commit.ci status
+
 Read in and plot run.stat data from a NEMO simulation.
 
 ## Quick Start
 
-```python
->>> import pyrunstat
+- Clone pyRunStat repository:
+
+  ```
+  export PYRS_DIR=$PWD/pyRunStat
+  git clone https://github.com/jdha/pyRunStat.git
+  ```
+
+- Creating a specific conda virtual environment is highly recommended ([click here for more about virtual
+  enviroments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)).
+  Use the latest version of anaconda (to be added in your .bashrc or load the module in the command line, e.g ` module load anaconda`).
+
+  ```
+  cd $PYRS_DIR
+  conda env create -n pyrunstat -f environment.yml python=3.11
+  ```
+
+- Activate the new virtual environment:
+
+  ```
+  conda activate pyrunstat
+  ```
+
+- To deactivate (not now!):
+
+  ```
+  conda deactivate
+  ```
+
+- Install pyRunStat:
+
+  ```
+  pip install -e .
+  ```
+
+This should result in pyRunStat being installed in the virtual environment,
+and can be checked by entering:
 
 ```
-
-## Workflow for developers/contributors
-
-For best experience create a new conda environment (e.g. DEVELOP) with Python 3.11:
-
-```
-conda create -n DEVELOP -c conda-forge python=3.11
-conda activate DEVELOP
+pyrunstat -v
 ```
 
-Before pushing to GitHub, run the following commands:
-
-1. Update conda environment: `make conda-env-update`
-1. Install this package: `pip install -e .`
-1. Sync with the latest [template](https://github.com/ecmwf-projects/cookiecutter-conda-package) (optional): `make template-update`
-1. Run quality assurance checks: `make qa`
-1. Run tests: `make unit-tests`
-1. Run the static type checker: `make type-check`
-1. Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make docs-build`
-
-## License
+Usage:
 
 ```
-Copyright 2024, European Union.
+import pyrunstat as rs
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+file_path = './run.stat'
 
-    http://www.apache.org/licenses/LICENSE-2.0
+# Extract the 'ssh_max'
+da_ssh_max = rs.extract.read_text(file_path, 'ssh_max')
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+# Plot ssh_max timeseries
+rs.plot.time_series(da_ssh_max, labels=['SSH maximum'])
 ```
+
+`pyrunstat.plot.time_series` can accept a list of DataArrays to allow the plotting of multiple timeseries
+from different simulations.
+
+## Example: plotting up the output from a run.stat or run.stat.nc file
+
+see: notebook

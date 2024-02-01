@@ -2,6 +2,13 @@
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 
 [project]
+dependencies = [
+  "netCDF4",
+  "xarray",
+  "numpy",
+  "matplotlib",
+  "seaborn"
+]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Science/Research",
@@ -11,6 +18,10 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Topic :: Scientific/Engineering"
+]
+keywords = [
+  "Oceanography",
+  "NEMO"
 ]
 description = "Read in and plot run.stat data from a NEMO simulation."
 dynamic = ["version"]
