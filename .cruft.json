@@ -1,0 +1,18 @@
+{
+  "template": "https://github.com/ecmwf-projects/cookiecutter-conda-package",
+  "commit": "d7af7236036e91f530260569aa5b232ed4ffbdd2",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "pyRunStat",
+      "project_slug": "pyrunstat",
+      "project_short_description": "Read in and plot run.stat data from a NEMO simulation.",
+      "copyright_holder": "European Union",
+      "copyright_year": "2024",
+      "mypy_strict": false,
+      "integration_tests": false,
+      "_template": "https://github.com/ecmwf-projects/cookiecutter-conda-package"
+    }
+  },
+  "directory": null
+}
