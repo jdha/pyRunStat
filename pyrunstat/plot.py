@@ -1,23 +1,20 @@
 # plot.py
 
-import seaborn as sns
 import matplotlib.pyplot as plt
-import xarray as xr
+import seaborn as sns
 
-def time_series( *data_xarray, label=None):
+
+def time_series(*data_xarrays, labels=None):
     sns.set(style="whitegrid")  # Set Seaborn style
     plt.figure(figsize=(10, 6))  # Adjust the figure size as needed
 
-    # Plot the xarray DataArray
-    data_xarray.plot(marker='o', label=label)
-
     # Plot each data array
-    for i, data_array in enumerate(data_arrays):
-        label = labels[i] if labels else f'Data Array {i + 1}'
-        data_xarray.plot(marker='o', label=label)
+    for i, data_xarray in enumerate(data_xarrays):
+        label = labels[i] if labels else f"Data Array {i + 1}"
+        data_xarray.plot(label=label)
 
-    plt.title('Time Series Plot')
-    plt.xlabel('Time Step')
-    plt.ylabel('Value')
+    plt.title(data_xarray.attrs["description"])
+    plt.xlabel("time step")
+    # plt.ylabel("Value")
     plt.legend()
     plt.show()

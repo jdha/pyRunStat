@@ -1,20 +1,20 @@
 # pyRunStat
 
 .. image:: https://img.shields.io/github/workflow/status/jdha/pyRunStat/CI?logo=github
-    :target: https://github.com/jdha/pyRunStat/actions
-    :alt: GitHub Workflow CI Status
+:target: https://github.com/jdha/pyRunStat/actions
+:alt: GitHub Workflow CI Status
 
 .. image:: https://codecov.io/gh/jdha/pyRunStat/branch/main/graph/badge.svg?token=
-    :target: https://codecov.io/gh/jdha/pyRunStat
-    :alt: Code Coverage
+:target: https://codecov.io/gh/jdha/pyRunStat
+:alt: Code Coverage
 
 .. image:: https://readthedocs.org/projects/pyrunstat/badge/?version=latest
-    :target: https://pyrunstat.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+:target: https://pyrunstat.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
 
 .. image:: https://results.pre-commit.ci/badge/github/jdha/pyRunStat/main.svg
-   :target: https://results.pre-commit.ci/latest/github/jdha/pyRunStat/main
-   :alt: pre-commit.ci status
+:target: https://results.pre-commit.ci/latest/github/jdha/pyRunStat/main
+:alt: pre-commit.ci status
 
 Read in and plot run.stat data from a NEMO simulation.
 

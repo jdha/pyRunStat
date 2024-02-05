@@ -9,9 +9,13 @@ channels:
 # DO NOT EDIT ABOVE THIS LINE, ADD DEPENDENCIES BELOW AS SHOWN IN THE EXAMPLE
 # environment.yml: Mandatory dependencies only.
 dependencies:
+- python=3.11
 - pip
 - numpy
 - netcdf4
 - matplotlib
 - xarray
 - seaborn
+- ipykernel
+- pip:
+  - types-seaborn

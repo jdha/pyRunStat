@@ -2,13 +2,6 @@
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 
 [project]
-dependencies = [
-  "netCDF4",
-  "xarray",
-  "numpy",
-  "matplotlib",
-  "seaborn"
-]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Science/Research",
@@ -19,12 +12,19 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Topic :: Scientific/Engineering"
 ]
+dependencies = [
+  "netCDF4",
+  "xarray",
+  "numpy",
+  "matplotlib",
+  "seaborn"
+]
+description = "Read in and plot run.stat data from a NEMO simulation."
+dynamic = ["version"]
 keywords = [
   "Oceanography",
   "NEMO"
 ]
-description = "Read in and plot run.stat data from a NEMO simulation."
-dynamic = ["version"]
 license = {file = "LICENSE"}
 name = "pyRunStat"
 readme = "README.md"
