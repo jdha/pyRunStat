@@ -12,9 +12,7 @@
 :target: https://pyrunstat.readthedocs.io/en/latest/?badge=latest
 :alt: Documentation Status
 
-.. image:: https://results.pre-commit.ci/badge/github/jdha/pyRunStat/main.svg
-:target: https://results.pre-commit.ci/latest/github/jdha/pyRunStat/main
-:alt: pre-commit.ci status
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/jdha/pyRunStat/main.svg )](https://results.pre-commit.ci/latest/github/jdha/pyRunStat/main)
 
 Read in and plot run.stat data from a NEMO simulation.
 
